@@ -6,6 +6,7 @@
     <router-link to="/login">登录</router-link>
     <router-view></router-view>
     <el-button type="primary">这是el的按钮</el-button>
+    <button>好臭啊艹</button>
   </div>
 </template>
 

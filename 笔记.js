@@ -60,4 +60,8 @@ ajax i/O system
 
 npx cz指的是执行node_modules./bin/cz命令
 
+提交代码时候报错no test specified。可以再测试一下为什么
+
+在package.json里面修改脚本。npx cz就变成了 npm run commit
+
  */
