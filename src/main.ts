@@ -3,8 +3,9 @@ import App from './App.vue'
 import router from './router/index'
 import store from './store/index'
 import { globalRegister } from './global'
-// import './service/axios-demo'
-import hyRequest from './service/index'
+import { setupStore } from './store/index'
+import 'normalize.css'
+import '@/assets/css/index.less'
 
 // 按需导入一些组件
 // 这里是全局导入。
@@ -19,13 +20,56 @@ app.use(globalRegister)
 app.use(router)
 app.use(store)
 app.mount('#app')
+setupStore()
 // 可以在shims-vue.d.ts里面进行声明。
 // console.log(process.env.NODE_ENV)
-// console.log(process.env.VUE_APP_BASE_URL) //这个是错误滴
+// console.log(process.env.VUE_APP_BASE_URL)
 
-// hyRequest.get()
-console.log(hyRequest)
-hyRequest.request({
-  url: '/home/multidata',
-  method: 'get'
-})
+// hyRequest.request({
+//   url: '/home/multidata',
+//   method: 'get',
+//   interceptors: {
+//     requestInterceptor: (config) => {
+//       console.log('单独请求的config')
+//       return config
+//     },
+//     responseInterceptor: (config) => {
+//       console.log('单独响应的config')
+//       return config
+//     }
+//   }
+// })
+interface DataType {
+  data: any
+  returnCode: string
+  success: boolean
+}
+// hyRequest
+//   .request<DataType>({
+//     url: '/home/multidata',
+//     method: 'get',
+//     showLoading: true
+//     // interceptors: {
+//     //   requestInterceptor: (config) => {
+//     //     console.log('单独请求的config')
+//     //     return config
+//     //   },
+//     //   responseInterceptor: (config) => {
+//     //     console.log('单独响应的config')
+//     //     return config
+//     //   }
+//     // }
+//   })
+//   .then((res) => {
+//     // console.log(res.data)
+//     // console.log(res.success)
+//     // console.log(res.returnCode)
+//   })
+// hyRequest
+//   .get<DataType>({
+//     url: '/home/multidata',
+//     showLoading: false
+//   })
+//   .then((res) => {
+//     console.log(res)
+//   })

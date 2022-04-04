@@ -1,12 +1,8 @@
 <template>
-  <div>
-    <h2>{{ this.$store.state.name }}</h2>
-    <h2>{{ $store.state.name }}</h2>
-    <router-link to="/main">首页</router-link>
-    <router-link to="/login">登录</router-link>
+  <div class="app">
+    <!-- <router-link to="/main">首页</router-link>
+    <router-link to="/login">登录</router-link> -->
     <router-view></router-view>
-    <el-button type="primary">这是el的按钮</el-button>
-    <button>好臭啊艹</button>
   </div>
 </template>
 
@@ -21,4 +17,9 @@ export default defineComponent({
 })
 </script>
 
-<style lang="less"></style>
+<style lang="less">
+.app {
+  height: 100%;
+  width: 100%;
+}
+</style>
