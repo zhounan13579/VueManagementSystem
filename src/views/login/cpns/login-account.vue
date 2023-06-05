@@ -17,7 +17,7 @@
 import { defineComponent, reactive, ref } from 'vue'
 import { ElForm } from 'element-plus'
 import { rules } from '../config/account-config'
-import { useStore } from 'vuex'
+import { useStore } from '@/store'
 import localCache from '@/utils/cache'
 export default defineComponent({
   setup() {
@@ -47,6 +47,7 @@ export default defineComponent({
             localCache.deleteCache('name')
             localCache.deleteCache('password')
           }
+          console.log('----------')
           // 2、进行登录验证。
           store.dispatch('loginModule/accountLoginAction', { ...account })
         }

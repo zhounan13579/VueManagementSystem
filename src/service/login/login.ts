@@ -1,5 +1,6 @@
 import hyRequest from '../index'
-import { IAccount, ILoginResult, IDataType } from './type'
+import { IAccount, ILoginResult } from './type'
+import { IDataType } from './../type'
 // 枚举类型
 enum LoginApi {
   AccountLogin = '/login',
@@ -17,7 +18,7 @@ export interface Role {
 export interface Department {
   id: number
   name: string
-  parentId?: any
+  parentId?: unknown
   createAt?: Date
   updateAt?: Date
   leader?: string

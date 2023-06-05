@@ -1,17 +1,19 @@
-import { createStore } from 'vuex'
-import { IRooteState } from './type'
+// 起别名
+import { createStore, Store, useStore as useVuexStore } from 'vuex'
+import { IRooteState, IStoreType } from './type'
 import loginModule from './login/login'
-// import login from './login/login'
+import systemModule from './main/system/system'
 // createStore后面可以传入泛型的。
 const store = createStore<IRooteState>({
-  state: () => {
+  state() {
     return {
-      name: '',
-      password: ''
+      name: 'zn',
+      age: '18'
     }
   },
   modules: {
-    loginModule
+    loginModule,
+    systemModule
   },
   mutations: {},
   getters: {},
@@ -23,5 +25,8 @@ export function setupStore() {
   // login模块里面的loadLocalLogin这个action
   store.dispatch('loginModule/loadLocalLogin')
 }
-
+// 返回的store是一个any类型
+export function useStore(): Store<IStoreType> {
+  return useVuexStore()
+}
 export default store

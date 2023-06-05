@@ -1,5 +1,5 @@
 class localCache {
-  setCache(key: string, value: any) {
+  setCache(key: string, value: unknown) {
     window.localStorage.setItem(key, JSON.stringify(value))
   }
   getCache(key: string) {

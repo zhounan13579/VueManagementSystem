@@ -9,7 +9,7 @@ module.exports = {
     proxy: {
       '^/api': {
         // 映射到URL。 代理服务器的地址http://152.136.185.210:5000。之后就需要在将开发环境的URL修改成/api
-        target: 'http://152.136.185.210:5000',
+        target: 'http://111.230.245.205:8880',
         pathRewrite: {
           '^/api': ''
         },

@@ -9,10 +9,46 @@ import {
   ElTabs,
   ElFormItem,
   ElLink,
-  ElCheckbox
+  ElCheckbox,
+  ElContainer,
+  ElAside,
+  ElHeader,
+  ElMain,
+  ElMenu,
+  ElSubMenu,
+  ElMenuItem,
+  ElMenuItemGroup,
+  ElDropdown,
+  ElDropdownMenu,
+  ElDropdownItem,
+  ElAvatar,
+  ElCol,
+  ElRow,
+  ElSelect,
+  ElOption,
+  ElDatePicker,
+  ElBreadcrumb,
+  ElBreadcrumbItem,
+  ElTable,
+  ElTableColumn,
+  ElPagination,
+  ElImage
 } from 'element-plus'
 
-import { Avatar, Iphone } from '@element-plus/icons-vue'
+import {
+  Avatar,
+  Iphone,
+  Setting,
+  Tools,
+  DArrowLeft,
+  DArrowRight,
+  ArrowDown,
+  UserFilled,
+  Edit,
+  Refresh,
+  Search,
+  Delete
+} from '@element-plus/icons-vue'
 
 const components = [
   ElButton,
@@ -23,10 +59,46 @@ const components = [
   ElTabPane,
   ElTabs,
   ElLink,
-  ElCheckbox
+  ElCheckbox,
+  ElContainer,
+  ElAside,
+  ElHeader,
+  ElMain,
+  ElMenu,
+  ElSubMenu,
+  ElMenuItem,
+  ElMenuItemGroup,
+  ElDropdown,
+  ElDropdownMenu,
+  ElDropdownItem,
+  ElAvatar,
+  ElCol,
+  ElRow,
+  ElSelect,
+  ElOption,
+  ElDatePicker,
+  ElBreadcrumb,
+  ElBreadcrumbItem,
+  ElTable,
+  ElTableColumn,
+  ElPagination,
+  ElImage
 ]
 
-const componentsIcons = [Avatar, Iphone]
+const componentsIcons = [
+  Avatar,
+  Iphone,
+  Setting,
+  Tools,
+  DArrowLeft,
+  DArrowRight,
+  ArrowDown,
+  UserFilled,
+  Edit,
+  Refresh,
+  Search,
+  Delete
+]
 
 // export function registerElement(app: App): void {
 export default function (app: App): void {

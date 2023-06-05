@@ -9,6 +9,7 @@ import {
   requestUserMenusByRoleId
 } from '@/service/login/login'
 import localCache from '@/utils/cache'
+import { mapMenusToRoutes } from '@/utils/map-menu'
 // 必须传入泛型的类型,这是必须传的
 const loginModule: Module<ILoginState, IRooteState> = {
   // 命名空间
@@ -29,6 +30,14 @@ const loginModule: Module<ILoginState, IRooteState> = {
     },
     changeUserMenus(state, userMenus: any) {
       state.userMenus = userMenus
+      // 把userMenu映射到routes里面。当type=2的时候做映射。代码在utils/map-menus.ts里面
+      const routes = mapMenusToRoutes(userMenus)
+      // console.log(routes)
+      // 将routes添加到router/main/children里面
+      // router.addRoute()是动态添加路由的
+      routes.forEach((route) => {
+        router.addRoute('main', route)
+      })
     }
   },
   actions: {
@@ -59,10 +68,13 @@ const loginModule: Module<ILoginState, IRooteState> = {
         commit('changeToken', token)
       }
       const userInfo = localCache.getCache('userInfo')
-      localCache.setCache('userInfo', userInfo)
-      // 3、请求用户菜单
+      if (userInfo) {
+        commit('changeUserInfo', userInfo)
+      }
       const userMenus = localCache.getCache('userMenus')
-      localCache.setCache('userMenus', userMenus)
+      if (userMenus) {
+        commit('changeUserMenus', userMenus)
+      }
     }
   },
   getters: {}
