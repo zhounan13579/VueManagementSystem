@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // 在router/index.ts里面用过
 import { IBreadCrumb } from '@/base-ui/breadcrumb'
 import { RouteRecordRaw } from 'vue-router'

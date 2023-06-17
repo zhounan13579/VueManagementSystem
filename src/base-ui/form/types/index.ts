@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 type IFormType = 'input' | 'select' | 'datepicker' | 'password'
 export interface IFormItem {
   filed: string //对应的字段

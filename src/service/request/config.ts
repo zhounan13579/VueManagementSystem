@@ -1,5 +1,5 @@
 // 如何区分环境变量
-// 1、手动切换不同的方式 const BASE_URL:string="http://123.207.32.32:8000"，不同的环境下手动修改
+// 1、手动切换不同的方式 const BASE_URL:string="http://121.37.196.89:8880"，不同的环境下手动修改
 // 2、根据process.env.NODE_ENV，这个在不同的环境下有不同的值。
 // 开发环境development 生产环境 production 测试环境test
 let BASE_URL: string
@@ -9,10 +9,11 @@ if (process.env.NODE_ENV === 'development') {
   BASE_URL = '/api'
   // TIME_OUT = 10000
 } else if (process.env.NODE_ENV === 'production') {
-  BASE_URL = 'http://coderwhyorg.prod'
+  console.log('生产环境')
+  BASE_URL = 'http://123.207.32.32:5000'
   // TIME_OUT = 10000
 } else {
-  BASE_URL = 'http://coderwhyorg.test'
+  BASE_URL = 'http://123.207.32.32:5000'
   // TIME_OUT = 10000
 }
 export { BASE_URL, TIME_OUT, Headers }

@@ -45,6 +45,7 @@ class HYRequest {
     // 2、所有的实例都有的拦截器
     this.instance.interceptors.request.use(
       (config) => {
+        console.log(config)
         // 举例3：请求之前显示loading，请求完成之后隐藏loading
         // 判断，如果请求传递了showLoading的话，那就显示。如果没有那就不显示。
         if (this.showLoading) {
@@ -64,7 +65,7 @@ class HYRequest {
     )
     this.instance.interceptors.response.use(
       (res) => {
-        // console.log(res)
+        console.log(res)
         // 将loading移除。直接用可选链
         // setTimeout(() => {
         this.loading?.close()

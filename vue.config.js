@@ -1,4 +1,4 @@
-const path = require('path')
+// const path = require('path')
 // 如果提示错误，但是实际上真的没有错误，可以悬浮、复制、到eslintrc.js、粘贴、off。
 module.exports = {
   /* 1、配置方式一：是CLI提供的属性 */
@@ -8,8 +8,8 @@ module.exports = {
   devServer: {
     proxy: {
       '^/api': {
-        // 映射到URL。 代理服务器的地址http://152.136.185.210:5000。之后就需要在将开发环境的URL修改成/api
-        target: 'http://111.230.245.205:8880',
+        // 映射到URL。 代理服务器的地址http://121.37.196.89:8880。之后就需要在将开发环境的URL修改成/api
+        target: 'http://123.207.32.32:5000',
         pathRewrite: {
           '^/api': ''
         },
@@ -28,7 +28,8 @@ module.exports = {
         components: '@/component' //默认情况下@对应的是src。所以这个的意思就是src/component
       }
     }
-  }
+  },
+  publicPath: './'
   // 相当于把config给我们，我们去修改这个config配置。
   // configureWebpack:(config)=>{
   //   // 相当于把之前的给覆盖掉了。所以需要重新写。

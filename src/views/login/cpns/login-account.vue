@@ -47,7 +47,6 @@ export default defineComponent({
             localCache.deleteCache('name')
             localCache.deleteCache('password')
           }
-          console.log('----------')
           // 2、进行登录验证。
           store.dispatch('loginModule/accountLoginAction', { ...account })
         }

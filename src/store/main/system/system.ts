@@ -3,7 +3,7 @@ import { IRooteState } from '@/store/type'
 import { Module } from 'vuex'
 import { ISystemState } from './type'
 import { getPageListData } from '@/service/main/system/system'
-import { List } from '@element-plus/icons-vue/dist/types'
+// import { List } from '@element-plus/icons-vue/dist/types'
 const systemModule: Module<ISystemState, IRooteState> = {
   namespaced: true,
   state() {
