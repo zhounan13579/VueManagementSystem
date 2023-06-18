@@ -48,6 +48,7 @@ export function accountLogin(account: IAccount) {
     url: LoginApi.AccountLogin,
     data: account
   })
+  // console.log(response)
   return response
 }
 // 获取用户信息的接口

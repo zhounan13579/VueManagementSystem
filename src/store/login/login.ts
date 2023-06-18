@@ -46,6 +46,7 @@ const loginModule: Module<ILoginState, IRooteState> = {
       // 1、实现登录逻辑
       // accountLogin().then({})返回的是一个promise这样写不太好，可以在前面写async.把当前的函数写成异步函数，里面就可以同步的去写异步的代码
       const loginResult = await accountLogin(payload)
+      // console.log(loginResult)
       const { id, token } = loginResult.data
       // 拿到token以后要保存到Account里面，修改state的数据的唯一的方法就是通过mutations。
       commit('changeToken', token)

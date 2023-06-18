@@ -4,10 +4,14 @@
     <el-form :rules="rules" :model="account" ref="formRef">
       <!-- prop指的是验证规则 -->
       <el-form-item label="账号" prop="name">
-        <el-input v-model="account.name"></el-input>
+        <el-input v-model="account.name" placeholder="coderwhy"></el-input>
       </el-form-item>
       <el-form-item label="密码" prop="password">
-        <el-input v-model="account.password" show-password></el-input>
+        <el-input
+          v-model="account.password"
+          show-password
+          placeholder="123456"
+        ></el-input>
       </el-form-item>
     </el-form>
   </div>
@@ -24,12 +28,12 @@ export default defineComponent({
     const store = useStore()
 
     // props里面的内容最好只用不改
-    const account = reactive({
-      // 如果是空的话就给一个空字符串
-      name: localCache.getCache('name') ?? '',
-      password: localCache.getCache('password') ?? ''
-    })
-
+    // const account = reactive({
+    //   // 如果是空的话就给一个空字符串
+    //   name: localCache.getCache('name') ?? '',
+    //   password: localCache.getCache('password') ?? ''
+    // })
+    const account = { name: 'coderwhy', password: '123456' }
     // 传入泛型 传入的是ElForm的类型，所以要在上面导入ElForm的类型。
     const formRef = ref<InstanceType<typeof ElForm>>()
     // isKeepPassword是从login-panel接收的。

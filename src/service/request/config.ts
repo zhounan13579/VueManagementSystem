@@ -9,7 +9,6 @@ if (process.env.NODE_ENV === 'development') {
   BASE_URL = '/api'
   // TIME_OUT = 10000
 } else if (process.env.NODE_ENV === 'production') {
-  console.log('生产环境')
   BASE_URL = 'http://123.207.32.32:5000'
   // TIME_OUT = 10000
 } else {
